@@ -118,6 +118,22 @@ module.exports = function(webpackEnv) {
         },
       });
     }
+    if (preProcessor === 'less-loader'){
+      loaders.push({
+        loader: require.resolve(preProcessor),
+        options: {
+          sourceMap: isEnvProduction && shouldUseSourceMap,
+          modules: false,
+          modifyVars: {
+            "@primary-color": "#f9c700",
+            'link-color': '#1DA57A',
+            'border-radius-base': '2px',
+            '@fill-body': '#54cc85'
+          },
+          javascriptEnabled: true,
+        },
+      });
+    }
     return loaders;
   };
 
@@ -277,6 +293,7 @@ module.exports = function(webpackEnv) {
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
         '@': path.resolve(__dirname, '../src'),
+        
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -483,7 +500,7 @@ module.exports = function(webpackEnv) {
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                   modules: true,
                   getLocalIdent: getCSSModuleLocalIdent,
-                },
+               },
                 'less-loader'
               ),
             },
