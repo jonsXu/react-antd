@@ -124,12 +124,6 @@ module.exports = function(webpackEnv) {
         options: {
           sourceMap: isEnvProduction && shouldUseSourceMap,
           modules: false,
-          modifyVars: {
-            "@primary-color": "#f9c700",
-            'link-color': '#1DA57A',
-            'border-radius-base': '2px',
-            '@fill-body': '#54cc85'
-          },
           javascriptEnabled: true,
         },
       });
@@ -293,7 +287,7 @@ module.exports = function(webpackEnv) {
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
         '@': path.resolve(__dirname, '../src'),
-        
+        'img':path.resolve(__dirname, '../src/static/img'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -304,7 +298,7 @@ module.exports = function(webpackEnv) {
         // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
         // please link the files into your node_modules/ and let module-resolution kick in.
         // Make sure your source files are compiled, as they will not be processed in any way.
-        new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+        //new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
       ],
     },
     resolveLoader: {
