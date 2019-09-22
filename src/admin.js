@@ -2,8 +2,9 @@ import React from 'react';
 import {Button,Row,Col} from 'antd';
 import Header from './components/header'
 import Footer from './components/footer'
+import Nav from '@/components/nav'
 import './test.less';  //引入less文件
-import log from 'img/test.gif';
+import log from 'img/logo.svg';
 
 export default class Admin extends React.Component{
     
@@ -25,16 +26,26 @@ export default class Admin extends React.Component{
 }
     render(){
         return (
-            <Row>
+            <Row className="main">
 
-                <Col span={3} ><img src={log} className="App-logo" alt="logo" /></Col>
-                <Col span={21} >
-                <Button type="primary">Primary</Button>
-                    <Header>header</Header>
-                    <Row></Row>
-                    <Footer>footer</Footer>
-                </Col>
-            </Row>
+            <Col span={6} className="main-left">
+               
+                <Row className="main_row top">
+                    <img src={log} className="main-logo" alt="logo" />
+                    <span className="title">react小样</span>
+                </Row>
+                <Row className="main_row navs">
+                <Nav></Nav>
+                </Row>
+            </Col>
+            <Col span={18} className="main-right">
+            
+            <Button type="primary">Primary</Button>
+                <Header>header</Header>
+                <Row></Row>
+                <Footer>footer</Footer>
+            </Col>
+        </Row>
         )
     }
 }
