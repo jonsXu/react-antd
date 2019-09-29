@@ -7,7 +7,9 @@ import './test.less';  //引入less文件
 import log from 'img/logo.svg';
 
 export default class Admin extends React.Component{
-    
+    state={
+        loss:'1'
+    }
     componentDidMount() {
         //调用吃方法，可以动态修改主题
     // window.less.modifyVars(
@@ -28,20 +30,18 @@ export default class Admin extends React.Component{
         return (
             <Row className="main">
 
-            <Col span={6} className="main-left">
+            <Col span={4} className="main-left">
                
                 <Row className="main_row top">
                     <img src={log} className="main-logo" alt="logo" />
-                    <span className="title">react小样</span>
+                    <span className="title">REACT</span>
                 </Row>
                 <Row className="main_row navs">
                 <Nav></Nav>
                 </Row>
             </Col>
-            <Col span={18} className="main-right">
-            
-            <Button type="primary">Primary</Button>
-                <Header>header</Header>
+            <Col span={20} className="main-right">
+                <Header >header</Header>
                 <Row></Row>
                 <Footer>footer</Footer>
             </Col>
