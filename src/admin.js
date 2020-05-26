@@ -4,7 +4,7 @@ import Header from './components/header'
 import Footer from './components/footer'
 import Nav from '@/components/nav'
 import './test.less';  //引入less文件
-import log from 'img/logo.svg';
+import log from 'img/log.png';
 
 export default class Admin extends React.Component{
     state={

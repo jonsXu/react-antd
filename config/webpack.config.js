@@ -123,7 +123,7 @@ module.exports = function(webpackEnv) {
         loader: require.resolve(preProcessor),
         options: {
           sourceMap: isEnvProduction && shouldUseSourceMap,
-          modules: false,
+          modules: true,
           javascriptEnabled: true,
         },
       });
@@ -288,6 +288,7 @@ module.exports = function(webpackEnv) {
         'react-native': 'react-native-web',
         '@': path.resolve(__dirname, '../src'),
         'img':path.resolve(__dirname, '../src/static/img'),
+        'staticImg':path.resolve(__dirname, '../public/assets'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
