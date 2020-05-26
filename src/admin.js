@@ -8,7 +8,7 @@ import log from 'img/log.png';
 
 export default class Admin extends React.Component{
     state={
-        loss:'1'
+        loss:'111'
     }
     componentDidMount() {
         //调用吃方法，可以动态修改主题
