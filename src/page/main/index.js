@@ -1,12 +1,11 @@
 import React from 'react';
 import {Button,Row,Col} from 'antd';
-import Header from './components/header'
-import Footer from './components/footer'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 import Nav from '@/components/nav'
-import './test.less';  //引入less文件
 import log from 'img/log.png';
 
-export default class Admin extends React.Component{
+export default class Main extends React.Component{
     constructor(props) {
         super(props);
         this.state = {loss: new Date().toString()};

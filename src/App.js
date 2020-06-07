@@ -3,28 +3,37 @@ import logo from './logo.svg';
 import {Button} from 'antd';
 import './App.css';
 import './test.less';
+class App extends React.Component{
+  componentDidMount() {
+    //调用此方法，可以动态修改主题
+window.less.modifyVars(
+    {
+        '@primary-color': 'red',
+        '@link-color': '#ee5e7b',
+        '@btn-primary-bg': 'ee5e7b',
+    }
+)
+.then(() => { 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div className="test">11</div>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-          <Button type="primary">Button</Button>
-        </a>
-      </header>
-    </div>
-  );
+})
+.catch(error => {
+    console.log(error)
+});
 }
+  render (){
+    return (
+      <div className="App" style={{height:'100%'}}>
+       {this.props.children}
+     </div>
+    )
+  }
+}
+// function App() {
+//   return (
+//     <div className="App">
+//       {this.props.children}
+//     </div>
+//   );
+// }
 
 export default App;
