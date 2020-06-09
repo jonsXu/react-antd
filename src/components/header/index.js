@@ -1,6 +1,6 @@
 import React from 'react';
-import {Icon, Button,Menu } from 'antd';
-
+import {Icon, Button ,Avatar} from 'antd';
+import { UserSwitchOutlined  } from '@ant-design/icons';
 import './index.less';
 
 
@@ -25,10 +25,12 @@ export default class Header extends React.Component{
           <div className="header">
             <div className="main">
               <Icon type="bell" className="f-left" />
-              <span className="f-right">退出</span>
+              <a className="f-right">退出</a>
               <span className="f-right user">{this.state.userName}</span> 
                
-              <Icon type="user" className="f-right"/>
+              <Avatar className="f-right" size={26} style={{fontSize:"16px",lineHeight:"26px"}}>
+                <Icon type="user"/>
+              </Avatar>
             </div>
             <div className="app-line"></div>
             <ul className='info'>

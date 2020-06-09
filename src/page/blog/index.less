@@ -1,1 +1,45 @@
 
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .blogList{
+        position:absolute;
+        width:100%;
+        height:100%;
+        text-align: left;
+        .blogItem{
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            width: 48%;
+            .blogItem-container{
+                display: flex;
+                align-items: center
+            }
+            .blog-cover{
+                display:inline-block;
+                height: 80px;
+                width: 120px;
+                img{
+                    height:100%
+                }
+            }
+            .blog-info{
+                display:inline-block;
+                margin-left: 20px;
+                .blog-title{
+                    text-align: center;
+                }
+                .blog-intro{
+                    margin-bottom: 10px;
+                }
+                .blog-base{
+                    span{
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
