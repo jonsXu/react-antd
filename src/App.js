@@ -8,7 +8,7 @@ class App extends React.Component{
     //调用此方法，可以动态修改主题
 window.less.modifyVars(
     {
-        '@primary-color': 'red',
+        '@primary-color': '#409eff',
         '@link-color': '#ee5e7b',
         '@btn-primary-bg': 'ee5e7b',
     }

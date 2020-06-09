@@ -2,8 +2,6 @@ import React from 'react';
 import {Icon, Button,Menu } from 'antd';
 
 import './index.less';
-const { SubMenu } = Menu;
-
 
 
 export default class Header extends React.Component{
@@ -27,10 +25,12 @@ export default class Header extends React.Component{
           <div className="header">
             <div className="main">
               <Icon type="bell" className="f-left" />
-              <span className="f-right">{this.state.userName}</span> 
+              <span className="f-right">退出</span>
+              <span className="f-right user">{this.state.userName}</span> 
+               
               <Icon type="user" className="f-right"/>
-              
             </div>
+            <div className="app-line"></div>
             <ul className='info'>
                 <li>{this.state.date}</li>
                 <li>周三 小雨</li>

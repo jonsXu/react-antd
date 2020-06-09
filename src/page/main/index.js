@@ -4,7 +4,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Nav from '@/components/nav'
 import log from 'img/log.png';
-
+import './index.less';  //引入less文件
 export default class Main extends React.Component{
     constructor(props) {
         super(props);
@@ -34,7 +34,6 @@ export default class Main extends React.Component{
                
                 <Row className="main_row top">
                     <img src={log} className="main-logo" alt="logo" />
-                    <span className="title">{this.state.loss}</span>
                 </Row>
                 <Row className="main_row navs">
                 <Nav></Nav>
@@ -42,7 +41,12 @@ export default class Main extends React.Component{
             </Col>
             <Col span={20} className="main-right">
                 <Header >header</Header>
-                <Row></Row>
+                <Row className="main-content" style={{height:'calc(100% - 103px)'}}>
+                    <div className="content-box">
+                        {this.props.children}
+                    </div>
+                    
+                </Row>
                 <Footer>footer</Footer>
             </Col>
         </Row>

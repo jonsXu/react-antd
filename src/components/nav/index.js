@@ -1,6 +1,6 @@
 import React from 'react';
 import {Icon, Button,Menu } from 'antd';
-
+import { Link} from 'react-router-dom'
 import routes from '@/routes/routers.js'
 import './index.less';
 const { SubMenu } = Menu
@@ -34,15 +34,16 @@ export default class Nav extends React.Component{
             )
             
           }
-          return (<Menu.Item title={item.title}  key={item.key}>{item.title}</Menu.Item>)
+          return (<Menu.Item title={item.title}  key={item.key}>
+          <Link to={item.key} activeStyle={{color: 'red'}}> {item.title}</Link>
+            </Menu.Item>)
         })
       }
       render() {
         return (
-          <div >
+          <div className="main-menu">
              <Menu
              mode="inline"
-             theme="dark"
             >
             {this.state.menuTreeNode}
             </Menu>

@@ -3,6 +3,7 @@ import { HashRouter,Route,Switch} from 'react-router-dom'
 import App from './App'
 import Demo1 from './page/demo1'
 import Main from './page/main/index'
+import BlogList from './page/blog/index'
 import Admin from './admin'
 
 
@@ -25,7 +26,9 @@ export default class IRouter extends React.Component{
                     </Route>
                     <Route path="/main" render={()=>
                         <Main>
+                            <Route path="/main/blog" component={BlogList}>
 
+                            </Route>
                         </Main>
                     }>
                     </Route>

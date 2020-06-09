@@ -1,7 +1,7 @@
 const routes = [
     {
         title:'首页',
-        key:'/admin/home'
+        key:'/main/blog'
     },
     {
         title:'canvas',
