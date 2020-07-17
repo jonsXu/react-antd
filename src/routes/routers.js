@@ -1,19 +1,33 @@
 const routes = [
     {
         title:'首页',
-        key:'/main/blog'
+        key:'/main/index',
     },
     {
-        title:'canvas',
-        key:'/admin/canvas',
+        title:'博客管理',
+        key:'/blog',
+        children:[
+            {
+                title:'博客列表',
+                key:'/main/blog/list'
+            },
+            {
+                title:'新增博客',
+                key:'/main/blog/add'
+            },
+        ]
+    },
+    {
+        title:'案列',
+        key:'/main/demo',
         children:[
             {
                 title:'万花筒',
-                key:'/admin/canvas/circle'
+                key:'/main/demo/circle'
             },
             {
                 title:'基础动画',
-                key:'/admin/canvas/baseDonghua'
+                key:'/main/demo/baseDonghua'
             }
         ]
     },
